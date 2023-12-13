@@ -1,40 +1,110 @@
 body {
+  font-family: 'Pirata One', sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
-  font-family: Aharoni, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Ekrana sığacak maksimum genişlik */
+  width: 100%;
+  margin: 20px;
 }
 
-button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  background-color: #c60000;
-  color: #fff;
-  border: none;
-  border-radius: 0.99rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+img {
+  width: 100%; /* Ebeveyn genişliğine tam sığacak şekilde */
+  height: auto; /* Oranları korumak için otomatik yükseklik */
+  border: 2px solid #cc0000;
+  border-radius: 4px;
+  display: block;
+  margin: auto;
 }
 
-h1 {
-  margin-top: 0;
-}
-
-body {
-  font-family: sans-serif;
+h1, h2 {
+  font-size: 2em;
+  color: #cc0000;
   text-align: center;
 }
 
-input {
-  padding: 0.5rem;
-  font-size: 1.2rem;
+p1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #cc0000;
+  border: 2px solid #cc0000;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 
+p, label, input, button, div {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #000000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 1em;
+  margin-bottom: 8px;
+  color: #cc0000;
+}
+
+input {
+  font-size: 0.9em;
+  padding: 8px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  border: 2px solid #cc0000;
+  border-radius: 4px;
+  color: #000000;
+}
+
+button {
+  font-size: 1em;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ecf0f1;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: #f1b90b;
+}
+
+button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+button[type="button"] {
+  margin-top: 12px;
+}
+
+div {
+  font-size: 1em;
+  margin-top: 12px;
+  color: #cc0000;
+}
+
+div.success {
+  color: #2ecc71;
 }
