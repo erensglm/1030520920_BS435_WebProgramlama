@@ -1,6 +1,6 @@
 body {
-  font-family: 'Pirata One', sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'No Continue Regular', sans-serif;
+  background-color: #8b0000;
   margin: 0;
   display: flex;
   align-items: center;
@@ -8,7 +8,12 @@ body {
   height: 100vh;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@font-face {
+  font-family: 'No Continue Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('No Continue Regular'), url('gomarice_no_continue.woff') format('woff');
+}
 
 .container {
   text-align: center;
@@ -22,17 +27,18 @@ body {
 }
 
 img {
-  width: 100%; /* Ebeveyn genişliğine tam sığacak şekilde */
+  width: 100%;
   height: auto; /* Oranları korumak için otomatik yükseklik */
-  border: 2px solid #cc0000;
+  border: 2px solid #000000;
   border-radius: 4px;
   display: block;
   margin: auto;
 }
 
+
 h1, h2 {
   font-size: 2em;
-  color: #cc0000;
+  color: #000000;
   text-align: center;
 }
 
@@ -40,15 +46,22 @@ p1 {
   font-size: 2.5em;
   margin-bottom: 15px;
   text-align: center;
-  color: #cc0000;
-  border: 2px solid #cc0000;
+  color: #000000;
+  border: 2px solid #000000;
   padding: 10px 20px;
   border-radius: 4px;
 }
 
-p, label, input, button, div {
-  font-size: 1.5em;
+p {
+  font-size: 1.8em;
   margin-bottom: 15px;
+  text-align: center;
+  color: #000000;
+}
+
+ label, input, button, div {
+  font-size: 1.5em;
+  margin-bottom: 10px;
   text-align: center;
   color: #000000;
 }
@@ -62,15 +75,15 @@ form {
 label {
   font-size: 1em;
   margin-bottom: 8px;
-  color: #cc0000;
+  color: #000000;
 }
 
 input {
   font-size: 0.9em;
   padding: 8px;
-  margin-top: 20px;
-  margin-bottom: 12px;
-  border: 2px solid #cc0000;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  border: 2px solid #000000;
   border-radius: 4px;
   color: #000000;
 }
@@ -83,7 +96,7 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -96,15 +109,20 @@ button:disabled {
 }
 
 button[type="button"] {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 div {
   font-size: 1em;
-  margin-top: 12px;
-  color: #cc0000;
+  margin-top: 1px;
+  color: #000000;
 }
 
 div.success {
   color: #2ecc71;
+}
+
+
+.react-audio-player {
+  display: none;
 }
