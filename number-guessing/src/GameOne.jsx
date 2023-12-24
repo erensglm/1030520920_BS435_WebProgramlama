@@ -33,10 +33,7 @@ function GameOne() {
     };
 
     const audioControls = {
-        playbackRate: 1.0,
-        volume: 1.0,
-        muted: !isPlaying,
-        loop: false,
+        playbackRate: 1.0, volume: 1.0, muted: !isPlaying, loop: false,
     };
 
     useEffect(() => {
@@ -161,10 +158,7 @@ function GameOne() {
             </>)}
             <div
                 style={{
-                    position: "fixed",
-                    bottom: "20px",
-                    right: "20px",
-                    zIndex: "1000",
+                    position: "fixed", bottom: "20px", right: "20px", zIndex: "1000",
                 }}
             >
                 <Button onClick={handlePlayPause}>

@@ -31,10 +31,7 @@ function GameTwo() {
     };
 
     const audioControls = {
-        playbackRate: 1.0,
-        volume: 1.0,
-        muted: !isPlaying,
-        loop: false,
+        playbackRate: 1.0, volume: 1.0, muted: !isPlaying, loop: false,
     };
 
     useEffect(() => {
@@ -76,87 +73,83 @@ function GameTwo() {
     };
 
 
-
     return (<div className="game-container">
-            <h1>Kiddo'nun Zalim Sayi Tahmin Oyunu</h1>
-            <div>
-                <img
-                    src={`${process.env.PUBLIC_URL}/indir.jpg`}
-                    alt="Resim"
-                    style={{width: 400, height: 200}}
+        <h1>Kiddo'nun Zalim Sayi Tahmin Oyunu</h1>
+        <div>
+            <img
+                src={`${process.env.PUBLIC_URL}/indir.jpg`}
+                alt="Resim"
+                style={{width: 400, height: 200}}
+            />
+        </div>
+        <p>
+            Kiddo seni kendi oyununa davet ediyor. Bu modda sayiyi tahmin etmek icin
+            yalnizca 3 hakkin var!<br/>
+            Oyun senin yerine otomatik olarak 1-100 arasindaki sayilari seçer.
+            Istersen hemen oynamaya baslayabilir veya kendin bir aralik secebilirsin.
+            <br/>
+            Eger hazirsan basla!
+        </p>
+        <form>
+            <label>
+                Min Sayi:
+                <input
+                    type="number"
+                    value={min}
+                    onChange={(e) => setMin(Number(e.target.value))}
                 />
+            </label>
+            <label>
+                Max Sayi:
+                <input
+                    type="number"
+                    value={max}
+                    onChange={(e) => setMax(Number(e.target.value))}
+                />
+            </label>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
+                <button type="button" onClick={activateGame}>
+                    Seni mahkum edecek sayıları seçtiysen başlayalım!
+                </button>
+                {/* Yönlendirme Butonu */}
+                <button type="button" onClick={goToApp}>
+                    Eğer diğer oyunu görmek istersen Ana Sayfaya Git
+                </button>
             </div>
-            <p>
-                Kiddo seni kendi oyununa davet ediyor. Bu modda sayiyi tahmin etmek icin
-                yalnizca 3 hakkin var!<br/>
-                Oyun senin yerine otomatik olarak 1-100 arasindaki sayilari seçer.
-                Istersen hemen oynamaya baslayabilir veya kendin bir aralik secebilirsin.
-                <br/>
-                Eger hazirsan basla!
-            </p>
-            <form>
-                <label>
-                    Min Sayi:
-                    <input
-                        type="number"
-                        value={min}
-                        onChange={(e) => setMin(Number(e.target.value))}
-                    />
-                </label>
-                <label>
-                    Max Sayi:
-                    <input
-                        type="number"
-                        value={max}
-                        onChange={(e) => setMax(Number(e.target.value))}
-                    />
-                </label>
-                <div style={{display: "flex", justifyContent: "space-between"}}>
-                    <button type="button" onClick={activateGame}>
-                        Seni mahkum edecek sayıları seçtiysen başlayalım!
-                    </button>
-                    {/* Yönlendirme Butonu */}
-                    <button type="button" onClick={goToApp}>
-                        Eğer diğer oyunu görmek istersen Ana Sayfaya Git
-                    </button>
-                </div>
-                {target !== null && (<>
-                    <input
-                        type="number"
-                        value={guess}
-                        onChange={(e) => setGuess(e.target.value)}
-                    />
-                    {gameOver ? (<button type="button" onClick={startGame}>
-                            Benim oyunumu tekrar tekrar oynayabilirsin ama her kaybettiğinde
-                            klavyendeki bir tuşu bozacağım!
-                        </button>) : (<>
-                            <button type="button" onClick={checkGuess}>
-                                Tahminini görelim evlat.
-                            </button>
-                            <p>{count} kere denedin seni hapsetmeme az kaldi.</p>
-                        </>)}
-                    <div>{msg}</div>
-                </>)}
-                <div
-                    style={{
-                        position: "fixed",
-                        bottom: "20px",
-                        right: "20px",
-                        zIndex: "1000",
-                    }}
-                >
-                    <Button onClick={handlePlayPause}>
-                        {isPlaying ? "Müziği Sustur" : "Müziği Aç"}
-                    </Button>
-                </div>
-                <ReactAudioPlayer
-                    src={`${process.env.PUBLIC_URL}/Audios/BP.mp3`}
-                    autoPlay={true}
-                    controls
-                    {...audioControls}
+            {target !== null && (<>
+                <input
+                    type="number"
+                    value={guess}
+                    onChange={(e) => setGuess(e.target.value)}
                 />
-            </form>
-        </div>);
+                {gameOver ? (<button type="button" onClick={startGame}>
+                    Benim oyunumu tekrar tekrar oynayabilirsin ama her kaybettiğinde
+                    klavyendeki bir tuşu bozacağım!
+                </button>) : (<>
+                    <button type="button" onClick={checkGuess}>
+                        Tahminini görelim evlat.
+                    </button>
+                    <p>{count} kere denedin seni hapsetmeme az kaldi.</p>
+                </>)}
+                <div>{msg}</div>
+            </>)}
+            <div
+                style={{
+                    position: "fixed", bottom: "20px", right: "20px", zIndex: "1000",
+                }}
+            >
+                <Button onClick={handlePlayPause}>
+                    {isPlaying ? "Müziği Sustur" : "Müziği Aç"}
+                </Button>
+            </div>
+            <ReactAudioPlayer
+                src={`${process.env.PUBLIC_URL}/Audios/BP.mp3`}
+                autoPlay={true}
+                controls
+                {...audioControls}
+            />
+        </form>
+    </div>);
 }
 
 export default GameTwo;

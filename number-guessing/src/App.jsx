@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import ReactAudioPlayer from "react-audio-player";
-import { Button, Col, Row } from "react-bootstrap";
+import {Button, Col, Row} from "react-bootstrap";
 
 function App() {
     const navigate = useNavigate();
@@ -12,20 +12,16 @@ function App() {
     };
 
     const audioControls = {
-        playbackRate: 1.0,
-        volume: 1.0,
-        muted: !isPlaying,
-        loop: false,
+        playbackRate: 1.0, volume: 1.0, muted: !isPlaying, loop: false,
     };
 
-    return (
-        <div className="App">
+    return (<div className="App">
             <h2>KIDDO'NUN BUDALA MEZARLIGI</h2>
             <div>
                 <img
                     src={`${process.env.PUBLIC_URL}/indir.jpg`}
                     alt="Resim"
-                    style={{ width: 1000, height: 500 }}
+                    style={{width: 1000, height: 500}}
                 />
             </div>
             <Row>
@@ -57,10 +53,7 @@ function App() {
                 </Col>
                 <div
                     style={{
-                        position: "fixed",
-                        bottom: "20px",
-                        right: "20px",
-                        zIndex: "1000",
+                        position: "fixed", bottom: "20px", right: "20px", zIndex: "1000",
                     }}
                 >
                     <Button onClick={handlePlayPause}>
@@ -69,13 +62,12 @@ function App() {
                 </div>
                 <ReactAudioPlayer
                     src={`${process.env.PUBLIC_URL}/Audios/DoS.mp3`}
-                    autoPlay={true}
+                    autoPlay={isPlaying}
                     controls
                     {...audioControls}
                 />
             </Row>
-        </div>
-    );
+        </div>);
 }
 
 export default App;
